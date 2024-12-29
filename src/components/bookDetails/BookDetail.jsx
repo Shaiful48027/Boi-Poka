@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { addhandleMarkRead } from "../utility/addToDb";
 
 const BookDetail = () => {
 
@@ -13,8 +14,8 @@ const BookDetail = () => {
 
     const { bookId: currentId, image, bookName, author, category, review, tags, publisher, rating, totalPages, yearOfPublishing } = book;
 
-    const handleMarkRead = () => {
-
+    const handleMarkRead = (id) => {
+        addhandleMarkRead(id);
     }
 
 
@@ -50,7 +51,7 @@ const BookDetail = () => {
                     </div>
                 </div>
                 <div className="flex gap-3">
-                    <button onClick={handleMarkRead} className="btn btn-accent text-white">Read</button>
+                    <button onClick={() => handleMarkRead(bookId)} className="btn btn-accent text-white">Read</button>
                     {/* <button onClick={} className="btn btn-primary text-white">Wishlist</button> */}
                 </div>
             </div>

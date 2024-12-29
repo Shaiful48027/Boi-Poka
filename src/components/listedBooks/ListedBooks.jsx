@@ -1,14 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { getReadList } from '../utility/addToDb';
+
+
+
+
 
 const ListedBooks = () => {
+    const [readlist, setReadlist] = useState([]);
+    
     const allBooks = useLoaderData();
+    
 
-    useEffect(()=>{
-        fetch.
-    },[])
+    
 
 
     return (
@@ -20,7 +26,7 @@ const ListedBooks = () => {
                 </TabList>
 
                 <TabPanel>
-                    <h2>Any content 1</h2>
+                    <h2>Book I Read : {readlist}</h2>
                 </TabPanel>
                 <TabPanel>
                     <h2>Any content 2</h2>
